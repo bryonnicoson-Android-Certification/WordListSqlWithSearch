@@ -1,4 +1,4 @@
-package com.android.example.wordlistsql;
+package com.android.example.wordlistsqlwithsearch;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -140,5 +140,23 @@ public class WordListOpenHelper extends SQLiteOpenHelper {
             Log.d(TAG, "UPDATE EXCEPTION! " + e.getMessage());
         }
         return mNumberOfRowsUpdated;
+    }
+
+    public Cursor search(String searchString) {
+        String[] columns = new String[]{KEY_WORD};
+        searchString = "%" + searchString + "%";
+        String where = KEY_WORD + " LIKE ?";
+        String[] whereArgs = new String[]{searchString};
+
+        Cursor cursor = null;
+
+        try {
+            if (mReadableDB == null) mReadableDB = getReadableDatabase();
+            cursor = mReadableDB.query(WORD_LIST_TABLE, columns, where, whereArgs, null, null, null);
+        } catch (Exception e) {
+            Log.d(TAG, "SEARCH EXCEPTION! " + e.getMessage());
+        }
+
+        return cursor;
     }
 }

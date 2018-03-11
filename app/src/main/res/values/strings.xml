@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License. -->
 
 <resources>
-    <string name="app_name">WordListSQLInteractive</string>
+    <string name="app_name">Word List SQL (with Search)</string>
     <string name="hint_word">Word...</string>
     <string name="hint_definition">Definition...</string>
     <string name="button_save">Save</string>
@@ -22,4 +22,6 @@ limitations under the License. -->
     <string name="button_edit">Edit</string>
     <string name="button_delete">Delete</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="search">Search</string>
+    <string name="search_result_prefix">Result for </string>
 </resources>

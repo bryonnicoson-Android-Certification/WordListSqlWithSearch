@@ -1,4 +1,4 @@
-package com.android.example.wordlistsql;
+package com.android.example.wordlistsqlwithsearch;
 
 /**
  * Created by bryon on 3/10/18.
